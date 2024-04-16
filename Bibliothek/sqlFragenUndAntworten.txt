@@ -1,0 +1,35 @@
+SQL Fragen
+
+1) Wieviel Bücher sind in der Datenbank gespeichert?
+
+	select count(*) from books;  // 20 
+
+2) Welche Bücher beginnen mit den Wort "The"?
+
+	select count(*) from books where title like "The %"; // 4
+
+3) Welche Bücher (Titel) wurden am 1.4.2024 ausgeliehen?
+
+	select b.title from books b join loans l on l.book_id = b.book_id where loan_date = "2024-04-01";
+
+4) Wieviel Bücher hat jeder Autor geschrieben?
+
+	select a.firstname, a.lastname, count(b.book_id) from authors a join books b on 	a.author_id = b.author_id group by a.author_id; 
+
+5) Welche Bücher (Titel, Vor- & Nachname des Autors) sind derzeit ausgeliehen?
+
+	select b.title, a.firstname, a.lastname  
+	from books b 
+	join loans l on l.book_id = b.book_id 
+	join authors a on a.author_id = b.author_id 
+	where l.return_date is null
+
+6) Wer hat am meisten Bücher (Vor-, Nachname, Anzahl Bücher ausgeliehen)
+
+	select m.firstname, m.lastname, count(l.loan_id) as cnt from members m 
+ 	join loans l on l.member_id = m.member_id 
+	group by m.member_id 
+	order by cnt desc limit 1
+
+
+	
