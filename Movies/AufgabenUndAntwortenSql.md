@@ -295,7 +295,7 @@ Bei gleicher Anzahl soll alphabetisch nach Namen sortiert werden.
 Genres bei denen keine Auszeichnungen gespeichert sind sollen mit der Anzahl 0 aufscheinen.
 
 ```sql
-select genre, count(*) as count
+select genre, count(a.movie_id) as count
 from genre g
     inner join movies m on m.genre_id = g.genre_id
     left join best_director_awards a on a.movie_id = m.movie_id
