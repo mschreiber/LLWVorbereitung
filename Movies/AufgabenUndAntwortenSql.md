@@ -303,12 +303,12 @@ group by g.genre_id
 order by 2 desc, 1
 
 -- rows 8
--- Drama	9
--- Documentary	7
--- science fiction 	7
--- Action	6
--- Comedy	4
--- Adventure	2
--- Horror	2
--- Romantic	2
+-- Drama	2
+-- science fiction 	2
+-- Adventure	1
+-- Comedy	1
+-- Romantic	1
+-- Action	0
+-- Documentary	0
+-- Horror	0
 ```
