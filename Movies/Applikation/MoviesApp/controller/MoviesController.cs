@@ -73,7 +73,7 @@ namespace MoviesApp.controller
         // Löscht den angegebenen Film aus der Datenbank
         public void Delete(Movie movie)
         {
-            using (var connection = new SqliteConnection(@"Data Source=C:\git\LLWVorbereitung\Movies\Datenbank\movies.db"))
+            using (var connection = new SqliteConnection(@"Data Source=C:\Users\User\Documents\GitHub\LLWVorbereitung\Movies\Datenbank\movies.db"))
             {
                 connection.Open();
                 SqliteCommand command = connection.CreateCommand();
@@ -97,7 +97,7 @@ namespace MoviesApp.controller
         private void loadMovies()
         {
             this._movies.Clear();
-            using (var connection = new SqliteConnection(@"Data Source=C:\git\LLWVorbereitung\Movies\Datenbank\movies.db"))
+            using (var connection = new SqliteConnection(@"Data Source=C:\Users\User\Documents\GitHub\LLWVorbereitung\Movies\Datenbank\movies.db"))
             {
                 connection.Open();
                 SqliteCommand command = connection.CreateCommand();
@@ -133,7 +133,7 @@ namespace MoviesApp.controller
         private void loadDirectors()
         {
             this._directors.Clear();
-            using (var connection = new SqliteConnection(@"Data Source=C:\git\LLWVorbereitung\Movies\Datenbank\movies.db"))
+            using (var connection = new SqliteConnection(@"Data Source=C:\Users\User\Documents\GitHub\LLWVorbereitung\Movies\Datenbank\movies.db"))
             {
                 connection.Open();
                 SqliteCommand command = connection.CreateCommand();
@@ -160,7 +160,7 @@ namespace MoviesApp.controller
         private void loadGenres()
         {
             this._genres.Clear();
-            using (var connection = new SqliteConnection(@"Data Source=C:\git\LLWVorbereitung\Movies\Datenbank\movies.db"))
+            using (var connection = new SqliteConnection(@"Data Source=C:\Users\User\Documents\GitHub\LLWVorbereitung\Movies\Datenbank\movies.db"))
             {
                 connection.Open();
                 SqliteCommand command = connection.CreateCommand();
