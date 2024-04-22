@@ -1,0 +1,12 @@
+
+Erstelle ein ER Modell für folgende Aufgabe:
+Projektzeitverwaltung
+Es geht darum, dass Mitarbeiter ihre Aufzeichnung, wieviel Stunden sie pro Tag für ein bestimmtes Projekt gearbeitet haben, in einem Online-Tool erfassen können. 
+Konkret: Es gibt Projekte. Jedes Projekt hat einen Projektleiter. Es gibt Mitarbeiter, jeder Mitarbeiter kann an einem oder vielen Projekten mitarbeiten. Die erfasste Zeit sind Stunden für einen bestimmten Tag. Jeder Mitarbeiter arbeitet in einer bestimmten Abteilung, die auch wichtig ist, weil die Abrechnung pro Abteilung passiert.
+Beispiel:
+Projekt X: 
+Projektleiter: Max Mustermann
+Stunden: 
+	19.3.2024, Emmi Musterfau, 3h
+             10.4.2024, Max Mustermann, 1h
+ 

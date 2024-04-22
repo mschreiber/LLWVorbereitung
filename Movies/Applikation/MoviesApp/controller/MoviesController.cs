@@ -76,10 +76,14 @@ namespace MoviesApp.controller
             using (var connection = new SqliteConnection(@"Data Source=C:\Users\User\Documents\GitHub\LLWVorbereitung\Movies\Datenbank\movies.db"))
             {
                 connection.Open();
-                SqliteCommand command = connection.CreateCommand();
-                command.CommandText = @"DELETE FROM movies where movie_id=$movie_id";
-                command.Parameters.AddWithValue("$movie_id", movie.Id);
-                command.ExecuteNonQuery();
+                SqliteCommand delRoleCmd = connection.CreateCommand();
+                delRoleCmd.CommandText = @"DELETE FROM roles where movie_id=$movie_id";
+                delRoleCmd.Parameters.AddWithValue("$movie_id", movie.Id);
+                delRoleCmd.ExecuteNonQuery();
+                SqliteCommand delMovieCmd = connection.CreateCommand();
+                delMovieCmd.CommandText = @"DELETE FROM movies where movie_id=$movie_id";
+                delMovieCmd.Parameters.AddWithValue("$movie_id", movie.Id);
+                delMovieCmd.ExecuteNonQuery();
             }
         }
 
