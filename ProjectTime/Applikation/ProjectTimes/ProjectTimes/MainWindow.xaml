@@ -7,11 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid ItemsSource="Projects">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <DataGrid Name="projectsGrid" ItemsSource="{Binding Projects}" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="0" Grid.Row="0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Budget" Binding="{Binding Budget}" />
+                <DataGridTextColumn Header="Project Leader" Binding="{Binding LeaderName}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>Edit</DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Click="edit"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>Edit</DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="delete"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
+        <Button Content="Add Project" Grid.Column="0" Grid.Row="1" Height="30" Width="120" Click="addProject" />
     </Grid>
 </Window>
